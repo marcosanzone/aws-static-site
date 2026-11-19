@@ -2,7 +2,7 @@
 
 A personal portfolio site hosted on AWS using a private S3 bucket served globally through CloudFront (HTTPS, Origin Access Control). Built as a hands-on project to practice core AWS services and document the architecture.
 
-**Live demo:** [https://d2pr08qv0vkzdl.cloudfront.net]
+**Live demo:** https://d2pr08qv0vkzdl.cloudfront.net
 ## Architecture
 
 ```
