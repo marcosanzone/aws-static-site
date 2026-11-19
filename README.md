@@ -25,7 +25,7 @@ User ──HTTPS──> CloudFront (CDN, TLS) ──OAC──> S3 bucket (privat
 ## Deployment (manual, via console)
 
 See [docs/deployment-steps.md](docs/deployment-steps.md)\
-See architecture design [docs/architecture.png](https://github.com/marcosanzone/aws-static-site/blob/main/docs/architecture.png)
+See architecture design ![Architecture diagram](docs/architecture.png)
 
 ## Roadmap
 
@@ -33,8 +33,6 @@ See architecture design [docs/architecture.png](https://github.com/marcosanzone/
 - [ ] Rebuild the infrastructure with Terraform (Infrastructure as Code)
 - [ ] CI/CD with GitHub Actions (auto-deploy on push)
 - [ ] Custom domain with Route 53 + ACM certificate
-
-## What I learned
 
 ## What I learned
 
