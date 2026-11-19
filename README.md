@@ -36,6 +36,14 @@ See architecture design [docs/architecture.png](https://github.com/marcosanzone/
 
 ## What I learned
 
+## What I learned
+
+- **A wrong default root object looks like a permissions error.** CloudFront returned `AccessDenied` instead of a 404. With a private bucket and Origin Access Control, S3 hides missing objects, so a configuration typo is easy to mistake for a bucket policy problem.
+- **The root cause was a typo.** The distribution's Default root object was set to `index.htm`, while the file in the bucket is `index.html`. The names must match exactly.
+- **The same error came back after my first fix**, which cost me extra debugging time. I narrowed it down by requesting `/index.html` directly and re-checking the object name in S3 against the root object setting in CloudFront.
+- **Debugging approach that worked:** test the direct path (`/index.html`), compare object key and root object character by character, and verify the bucket policy and origin settings one at a time instead of changing everything at once.
+- **Security stayed intact:** I never made the bucket public to "make it work". Block Public Access remains on, and CloudFront is the only way in.
+
 *(Fill this in after deploying: 3-5 bullet points on what worked, what broke, how you fixed it. Recruiters love this section.)*
 
 ## Author
