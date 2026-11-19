@@ -2,8 +2,7 @@
 
 A personal portfolio site hosted on AWS using a private S3 bucket served globally through CloudFront (HTTPS, Origin Access Control). Built as a hands-on project to practice core AWS services and document the architecture.
 
-**Live demo:** `https://<your-distribution-id>.cloudfront.net` *(replace after deploy)*
-
+**Live demo:** https://d2pr08qv0vkzdl.cloudfront.net
 ## Architecture
 
 ```
@@ -41,4 +40,4 @@ See [docs/deployment-steps.md](docs/deployment-steps.md).
 ## Author
 
 Marco Sanzone: IT Infrastructure & Cloud Consultant
-LinkedIn: *(add your URL)*
+LinkedIn: https://www.linkedin.com/in/marcosanzone/
