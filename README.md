@@ -25,7 +25,7 @@ User ──HTTPS──> CloudFront (CDN, TLS) ──OAC──> S3 bucket (privat
 ## Deployment (manual, via console)
 
 See [docs/deployment-steps.md](docs/deployment-steps.md)\
-See architecture design [docs/architecture.png]
+See architecture design docs/architecture.png
 
 ## Roadmap
 
