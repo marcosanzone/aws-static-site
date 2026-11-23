@@ -1,0 +1,4 @@
+# Copy this file to terraform.tfvars and edit the values.
+# terraform.tfvars is ignored by git (see .gitignore).
+region      = "eu-west-1"
+bucket_name = "marcosanzone-tf-site-2026"
