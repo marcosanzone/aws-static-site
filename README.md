@@ -27,10 +27,40 @@ User ──HTTPS──> CloudFront (CDN, TLS) ──OAC──> S3 bucket (privat
 See [docs/deployment-steps.md](docs/deployment-steps.md)\
 ![Architecture diagram](docs/architecture.png)
 
+## Infrastructure as Code (Terraform)
+
+The same infrastructure is also defined as code in the [`terraform/`](terraform/) folder, so the whole stack can be created and removed with a few commands.
+
+See https://d1voj04qdjg6fa.cloudfront.net
+
+**What it creates (6 resources):** private S3 bucket with Block Public Access, `index.html` object, CloudFront Origin Access Control, CloudFront distribution, and the bucket policy that allows only that distribution to read the bucket.
+
+| File | Purpose |
+|------|---------|
+| `main.tf` | All resources |
+| `variables.tf` | Region and bucket name |
+| `outputs.tf` | Prints the site URL |
+| `terraform.tfvars.example` | Template for local values |
+
+**Prerequisites:** Terraform, AWS CLI configured with an IAM user (no root keys).
+
+**Usage:**
+
+```bash
+cd terraform
+cp terraform.tfvars.example terraform.tfvars   # set a globally unique bucket_name
+terraform init
+terraform plan
+terraform apply
+```
+
+To remove everything: `terraform destroy`.
+
+`terraform.tfvars`, `.terraform/` and `*.tfstate` are never committed (see `.gitignore`).
 ## Roadmap
 
 - [x] Manual deployment via AWS Console
-- [ ] Rebuild the infrastructure with Terraform (Infrastructure as Code)
+- [X] Rebuild the infrastructure with Terraform (Infrastructure as Code)
 - [ ] CI/CD with GitHub Actions (auto-deploy on push)
 - [ ] Custom domain with Route 53 + ACM certificate
 
